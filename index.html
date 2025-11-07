@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Футбольный Чемпионат</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">⚽ Футбольный Чемпионат</div>
+  </header>
+
+  <div class="container">
+    <div id="tabs">
+      <button class="tab-btn active" data-tab="teams">Команды</button>
+      <button class="tab-btn" data-tab="matches">Матчи</button>
+      <button class="tab-btn" data-tab="table">Таблица</button>
+      <button class="tab-btn" data-tab="stats">Бомбардиры</button>
+    </div>
+
+    <!-- Команды -->
+    <div id="teams-tab" class="tab-content active">
+      <h2>Добавить команду</h2>
+      <div>
+        <input type="text" id="team-name" placeholder="Название команды">
+      </div>
+      <div id="players-inputs">
+        <div class="player-input">
+          <input type="text" placeholder="Игрок 1">
+          <button class="remove-player">X</button>
+        </div>
+      </div>
+      <button id="add-player">+ Добавить игрока</button>
+      <button id="add-team">Добавить команду</button>
+
+      <h3>Список команд</h3>
+      <ul id="team-list"></ul>
+    </div>
+
+    <!-- Матчи -->
+    <div id="matches-tab" class="tab-content">
+      <h2>Результаты матчей</h2>
+      <div>
+        <select id="match-team1"></select>
+        <input type="number" id="score1" min="0" value="0">
+        -
+        <input type="number" id="score2" min="0" value="0">
+        <select id="match-team2"></select>
+        <button id="save-match">Сохранить матч</button>
+      </div>
+      <ul id="match-list"></ul>
+    </div>
+
+    <!-- Таблица -->
+    <div id="table-tab" class="tab-content">
+      <h2>Таблица чемпионата</h2>
+      <button id="export-csv">Экспорт в CSV</button>
+      <table id="championship-table">
+        <thead>
+  <tr>
+    <th>Команда</th>
+    <th>И</th>
+    <th>В</th>
+    <th>Н</th>
+    <th>П</th>
+    <th>З</th>
+    <th>П</th>
+    <th>Р</th>
+    <th>О</th>
+  </tr>
+</thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Бомбардиры -->
+    <div id="stats-tab" class="tab-content">
+      <h2>Статистика бомбардиров</h2>
+      <table id="stats-table">
+        <thead>
+          <tr>
+            <th>Игрок</th>
+            <th>Команда</th>
+            <th>Голы</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Модальное окно распределения голов -->
+  <div id="goal-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Распределение голов</h3>
+      <div id="goal-entries-container"></div>
+      <div class="total-goals">
+        <div>Всего домашних: <span id="home-total">0</span> / <span id="home-score">0</span></div>
+        <div>Всего гостевых: <span id="away-total">0</span> / <span id="away-score">0</span></div>
+      </div>
+      <div style="margin-top: 20px;">
+        <button id="save-goals">Сохранить матч</button>
+        <button id="cancel-goals">Отмена</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

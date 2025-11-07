@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.tab-btn.active {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.tab-btn:not(.active) {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.tab-btn:hover {
+  opacity: 0.9;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+#add-team,
+#save-match,
+#export-csv,
+#save-goals {
+  background-color: #3498db;
+  color: white;
+}
+
+#add-team:hover,
+#save-match:hover,
+#export-csv:hover,
+#save-goals:hover {
+  background-color: #2980b9;
+}
+
+#cancel-goals {
+  background-color: #e74c3c;
+  color: white;
+}
+
+#cancel-goals:hover {
+  background-color: #c0392b;
+}
+
+#add-player {
+  background-color: #95a5a6;
+  color: white;
+}
+
+#add-player:hover {
+  background-color: #7f8c8d;
+}
+
+.player-input {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.player-input input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.remove-player {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 3px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.team-item {
+  background-color: #ecf0f1;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 3px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.edit-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 3px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#match-list li {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #ecf0f1;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#championship-table,
+#stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#championship-table th,
+#championship-table td,
+#stats-table th,
+#stats-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.goal-entry-group {
+  margin: 15px 0;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+}
+
+.goal-entry-group h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+.goal-entry {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.goal-entry label {
+  flex: 1;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.goal-entry input {
+  width: 60px;
+  text-align: center;
+}
+
+.total-goals {
+  background-color: #e3f2fd;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 15px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.total-goals div {
+  margin: 5px 0;
+}
+/* Подсветка очков зелёным */
+.points {
+  color: #27ae60;
+  font-weight: bold;
+}
